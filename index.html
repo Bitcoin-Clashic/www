@@ -71,17 +71,17 @@
 
                         <div class="logo-header mostion">
                             <a href="index.html">
-                                <img src="images/title_temp.png" width="218" height="60" alt="Title Network" />
+                                <img src="images/bitcoinclashicheadshot60x60.jpg" width="60" height="60" alt="Bitcoin Clashic" />
                             </a>
                         </div>
 
                         <div class="header-info" style="padding:0">
                             <ul>
-                                <li class="btccTicker" style="display:none;cursor:pointer" onclick="javascript:window.open('https://wallet.crypto-bridge.org/market/BRIDGE.TNET_BRIDGE.BTC')">
+                                <li class="bchcTicker" style="display:none;cursor:pointer" onclick="javascript:window.open('https://wallet.crypto-bridge.org/market/BRIDGE.TNET_BRIDGE.BTC')">
                                     <div style="padding-right:20px">
                                         <div class="icon-content" style="font-weight: bold">
                                             <strong class="text-white">TNET</strong>
-                                            <span class="btccPrice"></span>
+                                            <span class="bchcPrice"></span>
                                             <span id="btccChange"></span>
                                         </div>
                                     </div>
@@ -364,6 +364,7 @@
                                         </div>
                                         <div class="button-row">
                                             <button onclick="javascript:window.open('https://www.finexbox.com/Index/index.html')" class="site-button button-sm font-weight-600" type="button">FinexBox</button>
+                                            <button onclick="javascript:window.open('https://c-patex.com/markets/tnetbtc')" class="site-button button-sm font-weight-600" type="button">C-Patex</button>
                                         </div>
                                     </div>
                                 </div>
@@ -470,9 +471,9 @@
                     <div class="section-content">
                         <div class="row">
 
-                            <div class="col-md-3 col-sm-6 btccTicker" style="display:none">
+                            <div class="col-md-3 col-sm-6 bchcTicker" style="display:none">
                                 <div class="m-b30 text-black wt-icon-box-wraper center">
-                                    <div class="font-50 font-weight-800 m-b5"><span class="btccPrice"></span></div>
+                                    <div class="font-50 font-weight-800 m-b5"><span class="bchcPrice"></span></div>
                                     <span class="font-18">BTCC</span>
                                 </div>
                             </div>
@@ -538,7 +539,7 @@
                 <div class="container p-t30">
                     <div class="row">
                         <div class="wt-footer-bot-left">
-                            <span class="copyrights-text">© 2019 Title Network</span>
+                            <span class="copyrights-text">© 2017-2020 Bitcoin Clashic</span>
                         </div>
                     </div>
                 </div>
@@ -579,13 +580,13 @@
 <script  src="js/tickerNews.min.js"></script><!-- TICKERNEWS-->
 
 <script>
-    var updateBTCCTicker = function() {
+    var updateBCHCTicker = function() {
         // $.ajax("https://api.coinmarketcap.com/v2/ticker/2/?convert=USD").then((response) => {
         //     try {
         //         var market = response.data.quotes.USD;
         //         var marketIsPositive = market.percent_change_24h >= 0;
         //         // console.log(market);
-        //         $("#btccPrice").text("$" + market.price.toFixed(2));
+        //         $("#bchcPrice").text("$" + market.price.toFixed(2));
         //         $("#btccChange").text(
         //             (marketIsPositive ? "+" : "") + market.percent_change_24h.toFixed(2) + "%"
         //         ).css("color", market.percent_change_24h >= 0 ? "green" : "red");
@@ -593,14 +594,14 @@
         //     }
         // });
 
-        $.ajax("https://explorer.title.network/api/get-info").then((response) => {
+        $.ajax("https://explorer.clashic.cash/api/get-info").then((response) => {
             try {
                 var price = parseFloat(response.btcc_usd);
                 var difficulty = parseFloat(response.difficulty);
 
                 if(price) {
-                    $(".btccPrice").text("$" + (price).toFixed(2));
-                    $(".btccTicker").show();
+                    $(".bchcPrice").text("$" + (price).toFixed(2));
+                    $(".bchcTicker").show();
                 }
                 if(difficulty) {
                     var hashrate = difficulty * 4295032833 / 60 / Math.pow(1024, 5);
@@ -613,8 +614,8 @@
         });
     };
 
-    updateBTCCTicker();
-    setInterval(updateBTCCTicker, 30000);
+    updateBCHCTicker();
+    setInterval(updateBCHCTicker, 30000);
 </script>
 
 <script>window.twttr = (function(d, s, id) {
